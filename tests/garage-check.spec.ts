@@ -21,7 +21,7 @@ test("Hasn't P5 free spaces", async ({ page }) => {
     page.getByText(
       "Obecnie nie posiadamy odpowiedniej ilości dostępnych miejsc parkingowych"
     )
-  ).not.toBeAttached();
+  ).toBeAttached();
 });
 
 test("Hasn't Cargo free spaces", async ({ page }) => {
