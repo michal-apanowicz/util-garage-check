@@ -15,11 +15,13 @@ test("Hasn't P5 free spaces", async ({ page }) => {
     .getByText("Całodobowy P5 - pracownicy PLG (wyłącznie os. fiz.)")
     .click();
 
+  await page.waitForTimeout(500);
+
   await expect(
     page.getByText(
       "Obecnie nie posiadamy odpowiedniej ilości dostępnych miejsc parkingowych"
     )
-  ).not.toBeVisible();
+  ).not.toBeAttached();
 });
 
 test("Hasn't Cargo free spaces", async ({ page }) => {
@@ -31,5 +33,5 @@ test("Hasn't Cargo free spaces", async ({ page }) => {
     page.getByText(
       "Obecnie nie posiadamy odpowiedniej ilości dostępnych miejsc parkingowych"
     )
-  ).toBeVisible();
+  ).toBeAttached();
 });
