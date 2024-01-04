@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   await page.locator(".slds-is-open").waitFor();
 });
 
-test("Has P5 free spaces", async ({ page }) => {
+test("Hasn't P5 free spaces", async ({ page }) => {
   await page
     .getByText("Całodobowy P5 - pracownicy PLG (wyłącznie os. fiz.)")
     .click();
@@ -22,7 +22,7 @@ test("Has P5 free spaces", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("Has Cargo free spaces", async ({ page }) => {
+test("Hasn't Cargo free spaces", async ({ page }) => {
   await page
     .getByText("Całodobowy Cargo - pracownicy PLG (wyłącznie os. fiz.)")
     .click();
