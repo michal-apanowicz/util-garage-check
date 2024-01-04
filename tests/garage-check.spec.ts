@@ -15,7 +15,7 @@ test("Hasn't P5 free spaces", async ({ page }) => {
     .getByText("Całodobowy P5 - pracownicy PLG (wyłącznie os. fiz.)")
     .click();
 
-  await page.waitForTimeout(500);
+  await page.waitForLoadState("networkidle");
 
   await expect(
     page.getByText(
@@ -28,6 +28,8 @@ test("Hasn't Cargo free spaces", async ({ page }) => {
   await page
     .getByText("Całodobowy Cargo - pracownicy PLG (wyłącznie os. fiz.)")
     .click();
+
+  await page.waitForLoadState("networkidle");
 
   await expect(
     page.getByText(
