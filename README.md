@@ -1,0 +1,1 @@
+Uzupełnię po weselu. Pozdrawiam
