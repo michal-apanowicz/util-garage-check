@@ -1,12 +1,22 @@
 {
   "name": "garage-check",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
+  "description": "Automated garage space checker",
+  "main": "src/garage-check.js",
+  "scripts": {
+    "start": "node src/garage-check.js",
+    "test": "npm run start"
+  },
+  "keywords": [
+    "garage",
+    "automation",
+    "monitoring"
+  ],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
   "devDependencies": {
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.6"

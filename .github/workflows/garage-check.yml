@@ -1,0 +1,33 @@
+name: Garage Check
+
+on:
+  schedule:
+    # Runs every minute
+    - cron: "* * * * *"
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  check-garage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run garage check
+        run: node src/garage-check.js
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "🚨 Garage spaces detected or check failed!"
+          echo "Check the logs for details."
